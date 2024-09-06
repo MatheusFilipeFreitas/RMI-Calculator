@@ -20,16 +20,14 @@ public class CalculatorImpl extends UnicastRemoteObject implements Calculator {
 
     public double div(double a, double b) throws RemoteException {
         if(b == 0) {
-            throw new ArithmeticException("Division by zero is not allowed");
+            throw new ArithmeticException("Error: Division by zero is not allowed");
         }
         return a/b;
     }
 
     public double sub(double a, double b) throws RemoteException {
-        System.out.println(a + " " + b);
         if(a < b) {
-            System.out.println("Error");
-            throw new ArithmeticException("Second parameter cannot be menor than the first parameter");
+            throw new ArithmeticException("Error: Second parameter cannot be menor than the first parameter");
         }
         return a-b;
     }
